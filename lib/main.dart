@@ -49,6 +49,15 @@ Widget _buildbody() {
         color: Colors.white,
       ),
       extraWeatherDetail(),
+      const Divider(
+        height: 20.0,
+        color: Colors.white,
+      ),
+      _buildText('7-DAY WEATHER FORECAST'),
+      const Divider(
+        color: Colors.white,
+      ),
+      // _bottomDetails(),
     ],
   );
 }
@@ -81,7 +90,7 @@ Widget cityDetail() {
       ),
     ),
     subtitle: Text(
-      'Monday, 9, 2023',
+      'Tue, 10, 2023',
       style: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w300,
@@ -205,3 +214,38 @@ Widget extraWeatherDetail() {
     ],
   );
 }
+
+Text _buildText(String text) {
+  MainAxisAlignment.center;
+  return const Text(
+    '7-DAY WEATHER FORECAST',
+    style: TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w200,
+      color: Colors.black,
+    ),
+  );
+}
+
+// Widget _bottomDetails() {
+//   return Container(
+//     padding: EdgeInsets.all(10.0),
+//     child: Scaffold(
+//       body: ListView(
+//         scrollDirection: Axis.horizontal,
+//         children: <Widget>[
+//           SizedBox(
+//             width: 40.0,
+//             height: 40.0,
+//             child: ListTile(
+//               leading: Icon(
+//                 Icons.wb_sunny,
+//               ),
+//               title: Text('Sunday'),
+//             ),
+//           ),
+//         ],
+//       ),
+//     ),
+//   );
+// }
