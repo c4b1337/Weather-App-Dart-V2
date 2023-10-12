@@ -35,12 +35,12 @@ Widget _buildbody() {
     children: <Widget>[
       textField(),
       const Divider(
-        height: 20.0,
+        height: 10.0,
         color: Colors.white,
       ),
       cityDetail(),
       const Divider(
-        height: 20.0,
+        height: 30.0,
         color: Colors.white,
       ),
       _tempatureDetail(),
@@ -55,9 +55,10 @@ Widget _buildbody() {
       ),
       _buildText('7-DAY WEATHER FORECAST'),
       const Divider(
+        height: 40,
         color: Colors.white,
       ),
-      // _bottomDetails(),
+      _bottomDetails(),
     ],
   );
 }
@@ -227,25 +228,82 @@ Text _buildText(String text) {
   );
 }
 
-// Widget _bottomDetails() {
-//   return Container(
-//     padding: EdgeInsets.all(10.0),
-//     child: Scaffold(
-//       body: ListView(
-//         scrollDirection: Axis.horizontal,
-//         children: <Widget>[
-//           SizedBox(
-//             width: 40.0,
-//             height: 40.0,
-//             child: ListTile(
-//               leading: Icon(
-//                 Icons.wb_sunny,
-//               ),
-//               title: Text('Sunday'),
-//             ),
-//           ),
-//         ],
-//       ),
-//     ),
-//   );
-// }
+Widget _bottomDetails() {
+  return Expanded(
+    child: ListView(
+      scrollDirection: Axis.horizontal,
+      itemExtent: 250,
+      children: const <Widget>[
+        ListTile(
+          title: Text(
+            'Friday',
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.w200,
+              color: Colors.black,
+            ),
+          ),
+          subtitle: Text(
+            '6°F',
+            style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.w200,
+              color: Colors.black,
+            ),
+          ),
+          leading: Icon(
+            Icons.wb_sunny,
+            color: Colors.red,
+            size: 45,
+          ),
+        ),
+        ListTile(
+          title: Text(
+            'Saturday',
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.w200,
+              color: Colors.black,
+            ),
+          ),
+          subtitle: Text(
+            '5°F',
+            style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.w200,
+              color: Colors.black,
+            ),
+          ),
+          leading: Icon(
+            Icons.wb_sunny,
+            color: Colors.red,
+            size: 45,
+          ),
+        ),
+        ListTile(
+          title: Text(
+            'Sunday',
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.w200,
+              color: Colors.black,
+            ),
+          ),
+          subtitle: Text(
+            '4°F',
+            style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.w200,
+              color: Colors.black,
+            ),
+          ),
+          leading: Icon(
+            Icons.wb_sunny,
+            color: Colors.red,
+            size: 45,
+          ),
+        ),
+      ],
+    ),
+  );
+}
